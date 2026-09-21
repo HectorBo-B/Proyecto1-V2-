@@ -751,17 +751,40 @@ function SPchar(id, num){
 	
 	const inputField = document.getElementById(id);
 	
-	//Limitante para 
+	console.log("paso 1");
+	
+	//Limitante para números y guiones
 	if (num == 0){
-		
+		inputField.addEventListener('input', function(event){
+				let ognTxt = event.target.value;
+
+				let clnTxt = ognTxt.replace(/[^0-9\s -]/g, '');
+
+
+				event.target.value = clnTxt;
+			})
 	}
 	
+	///Limitante para correo eléctronico
+	else if (num == 1){
+		inputField.addEventListener('input', function(event){
+						let ognTxt = event.target.value;
+						
+						let clnTxt = ognTxt.replace(/[^a-zA-Z0-9@.\s]/g, '');
+						
+						event.target.value = clnTxt;
+						
+					})
+	}
 	
-	inputField.addEventListener('input', function(event){
-		let ognTxt = event.target.value;
-		
-		let clnTxt = ognTxt.replace(/[^a-zA-Z0-9\s]/g, '');
-		
-		event.target.value = clnTxt;
-	})
+	//Limitante que solo deja números pasar
+	else if (num == 2){
+		inputField.addEventListener('input', function(event){
+						let ognTxt = event.target.value;
+						
+						let clnTxt = ognTxt.replace(/[^0-9\s]/g, '');
+						
+						event.target.value = clnTxt;	
+					})
+	}
 }

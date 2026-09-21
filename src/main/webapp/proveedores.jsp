@@ -136,22 +136,25 @@
                         </div>
                         <div class="form-group">
                             <label>RUC <span class="required">*</span></label>
-                            <input type="text" name="ruc" class="form-control"
-                                   placeholder="Ej. 123456-1-123456" required>
+                            <input id= "ruc" type="text" name="ruc" class="form-control"
+                                   placeholder="Ej. 123456-1-123456" required
+                                   oninput = "SPchar(id, 2)">
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Teléfono</label>
-                                    <input type="text" name="telefono" class="form-control"
-                                           placeholder="Ej. 507-6123-4567">
+                                    <input id= "telF" type="text" name="telefono" class="form-control"
+                                           placeholder="Ej. 507-6123-4567"
+                                           oninput = "SPchar(id, 0)">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Correo</label>
-                                    <input type="email" name="correo" class="form-control"
-                                           placeholder="Ej. correo@empresa.com">
+                                    <input id = "mail" type="email" name="correo" class="form-control"
+                                           placeholder="Ej. correo@empresa.com"
+                                           oninput = "SPchar(id, 1)">
                                 </div>
                             </div>
                         </div>
