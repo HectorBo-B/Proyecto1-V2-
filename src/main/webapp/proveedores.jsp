@@ -138,7 +138,7 @@
                             <label>RUC <span class="required">*</span></label>
                             <input id= "ruc" type="text" name="ruc" class="form-control"
                                    placeholder="Ej. 123456-1-123456" required
-                                   oninput = "SPchar(id, 2)">
+                                   oninput = "SPchar(id, 1)">
                         </div>
                         <div class="row">
                             <div class="col-md-6">

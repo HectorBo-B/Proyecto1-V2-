@@ -753,15 +753,23 @@ function SPchar(id, num){
 	
 	console.log("paso 1");
 	
-	//Limitante para números y guiones
+	//Limitante para números telefónicos
 	if (num == 0){
 		inputField.addEventListener('input', function(event){
 				let ognTxt = event.target.value;
-
 				let clnTxt = ognTxt.replace(/[^0-9\s -]/g, '');
-
-
+				
+				//let dash = ognTxt.includes("-");
+				let dashCount = clnTxt.split("-").length	 - 1;
+				
+				if (dashCount > 1){			
+					let firstDash = clnTxt.indexOf("-");
+					clnTxt = clnTxt.slice(0, firstDash + 1) + clnTxt.slice(firstDash + 1).replaceAll("-", "");
+				}
+				
 				event.target.value = clnTxt;
+				
+				
 			})
 	}
 	
@@ -771,6 +779,19 @@ function SPchar(id, num){
 						let ognTxt = event.target.value;
 						
 						let clnTxt = ognTxt.replace(/[^a-zA-Z0-9@.\s]/g, '');
+						
+						let atCount = clnTxt.split("@").length - 1;
+						let pCount = clnTxt.split(".").length - 1;
+						
+						if (atCount > 1){
+							let firstAt = clnTxt.indexOf("@");
+							clnTxt = clnTxt.slice(0, firstAt + 1) + clnTxt.slice(firstAt + 1).replaceAll("@", "")
+						}
+						
+						if (pCount > 1){
+							let firstP = clnTxt.indexOf(".");
+							clnTxt = clnTxt.slice(0, firstP + 1) + clnTxt.slice(firstP + 1).replace(".", "")
+						}
 						
 						event.target.value = clnTxt;
 						
