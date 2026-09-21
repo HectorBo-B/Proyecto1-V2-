@@ -759,7 +759,7 @@ function SPchar(id, num){
 				let ognTxt = event.target.value;
 				let clnTxt = ognTxt.replace(/[^0-9\s -]/g, '');
 				
-				//let dash = ognTxt.includes("-");
+				
 				let dashCount = clnTxt.split("-").length	 - 1;
 				
 				if (dashCount > 1){			
